@@ -10,8 +10,14 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "dayjs-nuxt": "^1.1.2",
+    "eslint-plugin-prettier": "^4.2.1",
     "nuxt": "^3.6.1",
+    "pinia": "^2.1.4",
+    "prettier": "^3.0.0",
     "typescript": "^5.1.6"
   }
 }
