@@ -2,14 +2,18 @@ import { defineNuxtPlugin, NuxtApp } from '#app'
 import { useMainStore } from '~/store'
 import { Pinia } from 'pinia'
 
-interface ExtendedNuxtApp extends NuxtApp {
+interface PluginsInjections {
   $pinia: Pinia | null | undefined
 }
 
-export default defineNuxtPlugin((nuxt: ExtendedNuxtApp) => {
+declare module 'nuxt/dist/app/nuxt' {
+  interface NuxtApp extends PluginsInjections {}
+}
+
+export default defineNuxtPlugin((nuxt: NuxtApp) => {
   return {
     provide: {
-      store: useMainStore(nuxt.$pinia),
+      store: useMainStore(nuxt.$pinia as Pinia | null | undefined),
     },
   }
 })
