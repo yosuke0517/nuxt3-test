@@ -4,12 +4,14 @@ import { Pinia } from 'pinia'
 
 interface PluginsInjections {
   $pinia: Pinia | null | undefined
+  $store: ReturnType<typeof useMainStore>
 }
 
 declare module 'nuxt/dist/app/nuxt' {
   interface NuxtApp extends PluginsInjections {}
 }
 
+// @ts-ignore
 export default defineNuxtPlugin((nuxt: NuxtApp) => {
   return {
     provide: {
