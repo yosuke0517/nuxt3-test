@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
-import { useNuxtApp } from 'nuxt/app'
 import { ref, useFetch } from '#imports'
+import { useNuxtApp } from 'nuxt/app'
 
 const date = dayjs('2023-01-01')
 

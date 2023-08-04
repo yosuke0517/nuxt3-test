@@ -1,5 +1,5 @@
 import { defineNuxtRouteMiddleware } from '#app'
-import { useNuxtApp } from 'nuxt/app'
+import { useNuxtApp } from '#app'
 
 export default defineNuxtRouteMiddleware((to, from) => {
   // if (to.params.id === '1') {
@@ -15,4 +15,5 @@ export default defineNuxtRouteMiddleware((to, from) => {
   console.log('middleware from', from)
   const middlewareNuxtApp = useNuxtApp()
   console.log('middlewareNuxtApp', middlewareNuxtApp)
+  console.log('middleware: process', process)
 })

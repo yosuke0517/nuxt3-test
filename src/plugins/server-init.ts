@@ -5,5 +5,6 @@ export default defineNuxtPlugin(() => {
   const headers = useRequestHeaders(['cookie'])
   console.log('req', headers)
   if (process.server) {
+    console.log('serverやで')
   }
 })
