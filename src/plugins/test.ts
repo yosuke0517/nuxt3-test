@@ -6,6 +6,7 @@ interface PluginsInjections {
 }
 
 declare module '#app' {
+  // @ts-ignore
   interface NuxtApp extends PluginsInjections {}
 }
 

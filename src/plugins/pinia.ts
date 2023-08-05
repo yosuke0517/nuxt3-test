@@ -7,7 +7,8 @@ interface PluginsInjections {
   $store: ReturnType<typeof useMainStore>
 }
 
-declare module 'nuxt/dist/app/nuxt' {
+declare module '#app' {
+  // @ts-ignore
   interface NuxtApp extends PluginsInjections {}
 }
 

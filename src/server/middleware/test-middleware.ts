@@ -1,5 +1,5 @@
-import { defineEventHandler } from 'h3'
+import { fromNodeMiddleware } from 'h3'
 
-export default defineEventHandler((event) => {
-  console.log('New request: ' + event)
+export default fromNodeMiddleware((event) => {
+  console.log('test-middleware request: ')
 })

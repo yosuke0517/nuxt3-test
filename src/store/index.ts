@@ -17,9 +17,7 @@ export const useMainStore = defineStore('main', {
     },
   },
   getters: {
-    getCounter() {
-      const app = useNuxtApp()
-      console.log('getter useNuxtApp', app)
+    getCounter(): number {
       return this.counter
     },
     getCounter2: (state) => {

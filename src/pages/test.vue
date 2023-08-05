@@ -1,28 +1,29 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 import { ref, useFetch } from '#imports'
-import { useNuxtApp } from 'nuxt/app'
+import { useNuxtApp } from '#app'
+import { NuxtApp } from '#app'
 
 const date = dayjs('2023-01-01')
 
 const data = ref(null)
 
+const app: NuxtApp = useNuxtApp()
+
 useFetch(async () => {
   console.log('useFetch in process', process)
-  const res = await fetch('/api/hello')
+  const res = await fetch('http://localhost:3000/api/hello')
   data.value = await res.json()
 })
 
-const { $store, $myPlugin } = useNuxtApp()
-
 console.log('data', data)
 const increment = () => {
-  $store.increment()
-  console.log($myPlugin.hoge())
+  app.$store.increment()
+  console.log(app.$myPlugin.hoge())
 }
 
 const getCounter = () => {
-  return $store.getCounter()
+  return app.$store.getCounter
 }
 </script>
 

@@ -24,18 +24,18 @@ export default defineComponent({
     const app: NuxtApp = useNuxtApp()
     useAsyncData('key', async () => {
       if (process.server) {
-        console.log('useAsyncData!!', process.env)
+        // console.log('useAsyncData!!', process.env)
         const headers = useRequestHeaders(['cookie'])
-        console.log('cookie!!', headers)
+        // console.log('cookie!!', headers)
       }
       // your async data fetch logic here
       return {}
     })
-    console.log('test2: setup!!', context)
-    console.log('test2: setup: props', props)
+    // console.log('test2: setup!!', context)
+    // console.log('test2: setup: props', props)
     // console.log('app:', app.$userPresenter(app))
-    const hoge = useNuxtApp()
-    console.log(hoge.$myPlugin2.fuga())
+    // const hoge = useNuxtApp()
+    // console.log(hoge.$myPlugin2.fuga())
 
     // const { presenter, state } = app.$userPresenter(context)
 
@@ -43,14 +43,14 @@ export default defineComponent({
 
     const increment = () => {
       $store.increment()
-      console.log('myPlugin, hoge()', $myPlugin.hoge())
+      // console.log('myPlugin, hoge()', $myPlugin.hoge())
     }
     increment()
     const { state, presenter } = $userPresenter as ReturnType<
       typeof userPresenter
     >
-    console.log('$userPresenter: state', state)
-    console.log('$userPresenter: presenter', presenter)
+    // console.log('$userPresenter: state', state)
+    // console.log('$userPresenter: presenter', presenter)
 
     //
     // const date = dayjs('2023-01-01')
@@ -60,7 +60,7 @@ export default defineComponent({
     //   $store.increment()
     //   console.log($my.hoge())
     // }
-    console.log('vueApp', app.vueApp)
+    // console.log('vueApp', app.vueApp)
     const updateStaff = (hoge: string) => {
       presenter.updateStaff(hoge)
     }

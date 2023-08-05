@@ -25,7 +25,7 @@ declare module '#app' {
 }
 
 export default (context: NuxtApp) => {
-  console.log('plugins!!', context)
+  // console.log('plugins!!', context)
   return {
     provide: {
       userPresenter: userPresenter(context),

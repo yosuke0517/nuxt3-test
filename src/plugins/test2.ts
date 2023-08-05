@@ -21,9 +21,9 @@ class MyPlugin2 implements MyPluginInterface {
   }
   fuga() {
     // この中では、Nuxtインスタンスやルートオブジェクトも取得可能
-    console.log(useNuxtApp())
-    console.log('userRouter', useRouter())
-    console.log('userRoute', useRoute())
+    // console.log(useNuxtApp())
+    // console.log('userRouter', useRouter())
+    // console.log('userRoute', useRoute())
     console.log('ふが')
 
     return 'fuga'
