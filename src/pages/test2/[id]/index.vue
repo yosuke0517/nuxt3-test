@@ -24,26 +24,36 @@
         {{ item }}
       </li>
     </ul>
+    <ClientOnly>
+      <date-picker v-model:value="time0"></date-picker>
+    </ClientOnly>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue'
 import { useNuxtApp, useRoute } from '#app'
-import { userPresenter } from '~/plugins/userInjection'
+import { userPresenter } from '~/plugins/1_userInjection'
 import { errorMessages } from '~/helper/errorMessages'
 import { showConfirmDialog } from '~/utils/dialog'
 import SModal from '~/components/SModal.vue'
 import ConfirmModal from '~/components/ConfirmModal.vue'
+// import DatePicker from 'vue-datepicker-next'
+// import 'vue-datepicker-next/index.css'
 
 export default defineComponent({
-  components: { ConfirmModal, SModal },
+  components: {
+    ConfirmModal,
+    SModal,
+    DatePicker: defineAsyncComponent(() => import('vue-datepicker-next')),
+  },
   setup(_, context) {
     const route = useRoute()
     const isModalOpen = ref(false)
     const id = ref(route.params.id)
     const app = useNuxtApp()
     const hogeButtonRef = ref<HTMLButtonElement>()
+    const time0 = ref(null)
 
     const openDialog = () => {
       showConfirmDialog('hoge', 'fuga')
@@ -85,6 +95,7 @@ export default defineComponent({
       isModalOpen,
       openDialog,
       items,
+      time0,
     }
   },
 })
