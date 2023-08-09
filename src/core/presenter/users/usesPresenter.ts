@@ -15,8 +15,8 @@ export class UsesPresenter {
 
   async updateStaff(ctx: any) {
     // const currentUser = await this.authRepo.getAuth(ctx)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(ctx)
+    // await new Promise((resolve) => setTimeout(resolve, 1000))
+    this.view.state.role = 'update!'
   }
 
   updateRole(callback?: () => void) {
@@ -24,8 +24,7 @@ export class UsesPresenter {
   }
 
   getRole() {
-    const { t } = useI18n()
-    return t('role')
+    return 'hogehoge'
   }
 
   getError() {

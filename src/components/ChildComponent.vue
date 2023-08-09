@@ -1,5 +1,5 @@
 <template>
-  <button @click="emitClickEvent">Click me</button>
+  <button class="border-primary" @click="emitClickEvent">Update Staff</button>
 </template>
 
 <script lang="ts">

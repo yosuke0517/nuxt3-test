@@ -24,10 +24,10 @@ export class UsersView {
     this.state = reactive({
       id: 0,
       form: {
-        email: '',
-        name: '',
+        email: 'init email',
+        name: 'init name',
       },
-      role: '',
+      role: 'init role',
     })
   }
 

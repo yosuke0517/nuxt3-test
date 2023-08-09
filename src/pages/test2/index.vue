@@ -1,11 +1,11 @@
 <template>
   <div>
-    <input type="text" v-model="form.name" placeholder="Name" />
-    <input type="text" v-model="form.email" placeholder="Email" />
-    <p>name: {{ form.name }}</p>
-    <p>email: {{ form.email }}</p>
+    <input type="text" v-model="form.form.name" placeholder="Name" />
+    <input type="text" v-model="form.form.email" placeholder="Email" />
+    <p>name: {{ form.form.name }}</p>
+    <p>email: {{ form.form.email }}</p>
     <p>role: {{ form.role }}</p>
-    <ChildComponent @update-role="updateStaff" />
+    <ChildComponent @update-role="updateStaff('update!')" />
     <NuxtChild />
   </div>
 </template>
@@ -26,7 +26,7 @@ export default defineComponent({
       if (process.server) {
         // console.log('useAsyncData!!', process.env)
         const headers = useRequestHeaders(['cookie'])
-        // console.log('cookie!!', headers)
+        console.log('cookie!!', headers)
       }
       // your async data fetch logic here
       return {}

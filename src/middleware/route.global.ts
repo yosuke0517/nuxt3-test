@@ -14,6 +14,5 @@ export default defineNuxtRouteMiddleware((to, from) => {
   console.log('middleware to', to)
   console.log('middleware from', from)
   const middlewareNuxtApp = useNuxtApp()
-  console.log('middlewareNuxtApp', middlewareNuxtApp)
   console.log('middleware: process', process)
 })
