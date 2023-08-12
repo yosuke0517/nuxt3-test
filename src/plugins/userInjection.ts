@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, NuxtApp } from '#app'
+import { defineNuxtPlugin, NuxtApp, useNuxtApp } from '#app'
 import { UsesPresenter } from '~/core/presenter/users/usesPresenter'
 import { UsersView } from '~/core/presenter/users/usesView'
 import { UserInteractor } from '~/core/usecases/account'
@@ -24,13 +24,14 @@ declare module '#app' {
   interface NuxtApp extends UsersInjections {}
 }
 
-export default defineNuxtPlugin((context: NuxtApp) => {
+export default defineNuxtPlugin((_) => {
   console.log('plugins userInjection')
+  const app = useNuxtApp()
   // NuxtAppに入れてグローバルに使用できるようにする
-  context.$userPresenter = userPresenter(context)
+  app.$userPresenter = userPresenter(app)
   return {
     provide: {
-      userPresenter: userPresenter(context),
+      userPresenter: userPresenter(app),
     },
   }
 })
