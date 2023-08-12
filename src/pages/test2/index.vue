@@ -6,6 +6,8 @@
     <p>email: {{ form.form.email }}</p>
     <p>role: {{ form.role }}</p>
     <ChildComponent @update-role="updateStaff('update!')" />
+    <button class="btn-primary">プライマリボタン</button>
+    <button class="btn-secondary">セカンダリボタン</button>
     <NuxtChild />
   </div>
 </template>
@@ -77,3 +79,6 @@ export default defineComponent({
   },
 })
 </script>
+<style lang="scss" scoped>
+@import '~/assets/variables.scss';
+</style>

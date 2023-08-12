@@ -1,0 +1,24 @@
+// デフォルトの変数設定
+$primary-color: blue !default;
+$secondary-color: green !default;
+
+// 共通のボタンスタイル
+%btn-base {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  background-color: $primary-color;
+  color: white;
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  background-color: $secondary-color;
+  color: white;
+}

@@ -100,3 +100,8 @@ export default defineComponent({
   },
 })
 </script>
+<style lang="scss" scoped>
+body {
+  width: 99%;
+}
+</style>

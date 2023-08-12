@@ -1,0 +1,39 @@
+$namespace: 'mx' !default;
+
+// sweeep-custome
+$default-color: #000 !default;
+$primary-color: #0e0ee0 !default;
+$calender-day-thead-color: #666 !default;
+
+$today-color: mix(#fff, $primary-color, 10%) !default;
+
+$popup-z-index: 2001 !default;
+
+$input-border-color: #ccc !default;
+$input-color: #555 !default;
+$input-hover-border-color: #409aff !default;
+
+$disabled-color: #ccc !default;
+$disabled-background-color: #f3f3f3 !default;
+
+$border-color: #e8e8e8 !default;
+
+$calendar-active-color: #fff !default;
+$calendar-active-background-color: $primary-color !default;
+
+$calendar-hover-color: $default-color !default;
+$calendar-hover-background-color: mix(#fff, $calendar-active-background-color, 95%) !default;
+
+$calendar-in-range-color: $default-color !default;
+$calendar-in-range-background-color: mix(#fff, $calendar-active-background-color, 85%) !default;
+
+$time-active-color: $primary-color !default;
+$time-active-background-color: transparent !default;
+
+$time-hover-color: $default-color !default;
+$time-hover-background-color: mix(#fff, $calendar-active-background-color, 95%) !default;
+
+$input-border-radius: 4px !default;
+
+// sweeep-custome
+$sidebar-margin-left: 120px !default;
