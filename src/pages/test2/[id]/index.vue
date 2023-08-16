@@ -2,6 +2,7 @@
   <div>
     <h1 class="font-bold">Test2 Detail Page</h1>
     <p>Id: {{ id }}</p>
+    <p>route: {{ $route.path }}</p>
     <button
       class="inline bg-gray-100 border-gray-200 p-4"
       v-tooltip="{
@@ -14,7 +15,7 @@
       hoge
     </button>
     <p>{{ role2 }}: {{ role }}</p>
-    <p>{{ errorMessages.unexpected }}</p>
+    <p>errorMessages.unexpected: {{ errorMessages.unexpected }}</p>
     <p>{{ error }}</p>
     <SModal :value="isModalOpen" variant="large" @closed="closeModal">
       <template #header>確認</template>
@@ -96,6 +97,7 @@ export default defineComponent({
       openDialog,
       items,
       time0,
+      route,
     }
   },
 })
