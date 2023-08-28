@@ -14,7 +14,16 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-security',
   ],
-  router: {},
+  hooks: {
+    'pages:extend'(pages) {
+      // 新しいルートを追加
+      pages.push({
+        name: 'drag',
+        path: '/drag',
+        file: '~/pages/draggable.vue',
+      })
+    },
+  },
   plugins: [
     '~/plugins/i18n/index.ts',
     '~/plugins/floating-vue.ts',
