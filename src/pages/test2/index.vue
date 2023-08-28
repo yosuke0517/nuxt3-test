@@ -24,6 +24,7 @@ export default defineComponent({
   components: { ChildComponent },
   setup(props, context) {
     const app: NuxtApp = useNuxtApp()
+    console.log('test2 in process', process.env.HOGE)
     useAsyncData('key', async () => {
       if (process.server) {
         // console.log('useAsyncData!!', process.env)
