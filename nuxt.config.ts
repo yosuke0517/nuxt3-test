@@ -8,7 +8,13 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   srcDir: 'src/',
-  modules: ['dayjs-nuxt', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  modules: [
+    'dayjs-nuxt',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    'nuxt-security',
+  ],
+  router: {},
   plugins: [
     '~/plugins/i18n/index.ts',
     '~/plugins/floating-vue.ts',
@@ -19,4 +25,9 @@ export default defineNuxtConfig({
     '~/plugins/server-init.ts',
   ],
   css: ['~/assets/variables.scss'],
+  runtimeConfig: {
+    public: {
+      HOGE: process.env.HOGE,
+    },
+  },
 })

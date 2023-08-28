@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import { ref, useFetch } from '#imports'
 import { useNuxtApp } from '#app'
-import { NuxtApp } from '#app'
+import { NuxtApp, useRuntimeConfig } from '#app'
 
 const date = dayjs('2023-01-01')
 
@@ -11,7 +11,7 @@ const data = ref(null)
 const app: NuxtApp = useNuxtApp()
 
 useFetch(async () => {
-  console.log('useFetch in process', process)
+  console.log('env', useRuntimeConfig().public.HOGE)
   const res = await fetch('http://localhost:3000/api/hello')
   data.value = await res.json()
 })
