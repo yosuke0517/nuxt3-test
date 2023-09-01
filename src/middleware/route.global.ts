@@ -11,8 +11,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
   // if (to.path !== '/') {
   //   return navigateTo('/')
   // }
-  console.log('middleware to', to)
-  console.log('middleware from', from)
+  // console.log('middleware to', to)
+  // console.log('middleware from', from)
   const middlewareNuxtApp = useNuxtApp()
-  console.log('middleware: process', process)
+  // console.log('middleware: process', process)
 })

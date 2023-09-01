@@ -7,7 +7,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
   //   const { presenter } = app.$userPresenter
   //   console.log('app', presenter.view.state.role)
   // }
-  const app = useNuxtApp()
-  const { presenter } = app.$userPresenter
-  console.log('middlewarepresenter!!', presenter.getRole())
+  // const app = useNuxtApp()
+  // const { presenter } = app.$userPresenter
+  // console.log('middlewarepresenter!!', presenter.getRole())
 })

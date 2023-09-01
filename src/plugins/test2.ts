@@ -31,9 +31,9 @@ class MyPlugin2 implements MyPluginInterface {
 }
 
 export default (nuxtApp: NuxtApp) => {
-  console.log('引数のNuxtApp', nuxtApp)
-  const hoge = useNuxtApp()
-  console.log('useNuxtApp()', hoge)
+  // console.log('引数のNuxtApp', nuxtApp)
+  // const hoge = useNuxtApp()
+  // console.log('useNuxtApp()', hoge)
   const my = () => {
     return new MyPlugin2(nuxtApp)
   }
