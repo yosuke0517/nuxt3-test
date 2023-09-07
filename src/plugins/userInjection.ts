@@ -8,7 +8,7 @@ export const userPresenter = (
 ): { presenter: UsesPresenter; state: Readonly<UsersView['state']> } => {
   const view = new UsersView(context)
   const ui = new UserInteractor()
-  const presenter = new UsesPresenter(view, ui)
+  const presenter = new UsesPresenter(view, ui, context)
   return {
     presenter,
     state: view.state,
@@ -28,10 +28,5 @@ export default defineNuxtPlugin((_) => {
   console.log('plugins userInjection')
   const app = useNuxtApp()
   // NuxtAppに入れてグローバルに使用できるようにする
-  app.$userPresenter = userPresenter(app)
-  return {
-    provide: {
-      userPresenter: userPresenter(app),
-    },
-  }
+  app.$userPresenter = () => userPresenter(app)
 })

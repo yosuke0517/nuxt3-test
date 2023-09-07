@@ -10,7 +10,7 @@ import { useNuxtApp } from 'nuxt/app'
 export default defineComponent({
   setup(_, context: SetupContext) {
     const app = useNuxtApp()
-    const { state, presenter } = app.$userPresenter as ReturnType<
+    const { state, presenter } = app.$userPresenter() as ReturnType<
       typeof userPresenter
     >
     const emitClickEvent = () => {
