@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
     const headers = useRequestHeaders(['cookie'])
     console.log('cookieinplugin', headers)
     const app = useNuxtApp()
-    const { presenter } = app.$userPresenter
+    const { presenter } = app.$userPresenter()
     console.log('presenter!!!', presenter.getRole())
   }
 })

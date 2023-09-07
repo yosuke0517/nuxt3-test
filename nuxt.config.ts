@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     '~/plugins/test2.ts',
     '~/plugins/userInjection.ts',
     '~/plugins/server-init.ts',
+    '~/plugins/vue-toastification.ts',
     // '~/plugins/router.client.ts',
   ],
   hooks: {
@@ -54,10 +55,6 @@ export default defineNuxtConfig({
         ],
       }
       pages.push(invoicesRoute)
-
-      // childrenの内容をログとして出力
-      console.log('invoicesRoute children:', invoicesRoute.children)
-      console.log('pages after:', JSON.stringify(pages, null, 2))
     },
   },
   css: ['~/assets/variables.scss'],

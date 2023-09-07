@@ -19,17 +19,20 @@ import { useAsyncData } from '#imports'
 import { NuxtApp, useRequestHeaders } from '#app'
 import { userPresenter } from '~/plugins/userInjection'
 import ChildComponent from '~/components/ChildComponent.vue'
+import { Hoge } from '~/core/infrastructure/hoge'
 
 export default defineComponent({
   components: { ChildComponent },
   setup(props, context) {
     const app: NuxtApp = useNuxtApp()
+    const hoge = new Hoge()
+    console.log(hoge.hoge())
     console.log('test2 in process', process.env.HOGE)
     useAsyncData('key', async () => {
       if (process.server) {
         // console.log('useAsyncData!!', process.env)
         const headers = useRequestHeaders(['cookie'])
-        console.log('cookie!!', headers)
+        // console.log('cookie!!', headers)
       }
       // your async data fetch logic here
       return {}
@@ -49,7 +52,7 @@ export default defineComponent({
       // console.log('myPlugin, hoge()', $myPlugin.hoge())
     }
     increment()
-    const { state, presenter } = $userPresenter as ReturnType<
+    const { state, presenter } = $userPresenter() as ReturnType<
       typeof userPresenter
     >
     // console.log('$userPresenter: state', state)
