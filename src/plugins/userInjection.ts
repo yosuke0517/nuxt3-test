@@ -17,6 +17,7 @@ export const userPresenter = (
 
 interface UsersInjections {
   $userPresenter(): ReturnType<typeof userPresenter>
+  $test: any
 }
 
 declare module '#app' {
@@ -27,6 +28,7 @@ declare module '#app' {
 export default defineNuxtPlugin((_) => {
   console.log('plugins userInjection')
   const app = useNuxtApp()
+  app.$test = 'hoge'
   // NuxtAppに入れてグローバルに使用できるようにする
   app.$userPresenter = () => userPresenter(app)
 })
