@@ -12,6 +12,8 @@ const app: NuxtApp = useNuxtApp()
 
 useFetch(async () => {
   console.log('env', useRuntimeConfig().public.HOGE)
+  console.log('api/hello in useFetch public: ', process.env.HOGE)
+  console.log('api/hello in useFetch private: ', process.env.NUXT_ENV_FUGA)
   const res = await fetch('http://localhost:3000/api/hello')
   data.value = await res.json()
 })
