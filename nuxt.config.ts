@@ -59,8 +59,15 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/variables.scss'],
   runtimeConfig: {
+    testtest: process.env.NUXT_ENV_FUGA,
     public: {
       HOGE: process.env.HOGE,
     },
+    private: {
+      NUXT_ENV_FUGA: process.env.FUGA,
+    },
+  },
+  build: {
+    transpile: ['vue-toastification'],
   },
 })
