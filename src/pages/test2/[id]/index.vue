@@ -34,7 +34,7 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue'
 import { useNuxtApp, useRoute } from '#app'
-import { userPresenter } from '~/plugins/1_userInjection'
+import { userPresenter } from '~/plugins/userInjection'
 import { errorMessages } from '~/helper/errorMessages'
 import { showConfirmDialog } from '~/utils/dialog'
 import SModal from '~/components/SModal.vue'
@@ -70,7 +70,7 @@ export default defineComponent({
       showConfirmDialog('hoge', 'OK')
     }
 
-    const { state, presenter } = app.$userPresenter as ReturnType<
+    const { state, presenter } = app.$userPresenter() as ReturnType<
       typeof userPresenter
     >
 
