@@ -8,7 +8,7 @@ import { userPresenter } from '~/plugins/userInjection'
 import { useNuxtApp } from 'nuxt/app'
 
 export default defineComponent({
-  setup(_, context: SetupContext) {
+  setup(_, context) {
     const app = useNuxtApp()
     const { state, presenter } = app.$userPresenter() as ReturnType<
       typeof userPresenter
