@@ -28,8 +28,8 @@ export class UsesPresenter {
     this.context.$toaster.success({ text: 'success update!!' })
   }
 
-  updateRole(callback?: () => void) {
-    if (callback) callback()
+  updateRole(callback?: void) {
+    if (callback) callback
   }
 
   getRole() {
