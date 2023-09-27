@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { useNuxtApp } from 'nuxt/app'
 
 type TState = {
   counter: number
