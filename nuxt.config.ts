@@ -62,6 +62,8 @@ export default defineNuxtConfig({
     testtest: process.env.NUXT_ENV_FUGA,
     public: {
       HOGE: process.env.HOGE,
+      NUXT_ENV_FIREBASE_API_KEY: process.env.NUXT_ENV_FIREBASE_API_KEY,
+      NUXT_ENV_AUTH_DOMAIN: process.env.NUXT_ENV_AUTH_DOMAIN,
     },
     private: {
       NUXT_ENV_FUGA: process.env.FUGA,
