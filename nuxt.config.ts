@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     '~/plugins/userInjection.ts',
     '~/plugins/server-init.ts',
     '~/plugins/vue-toastification.ts',
-    // '~/plugins/router.client.ts',
   ],
   hooks: {
     'pages:extend'(pages) {
