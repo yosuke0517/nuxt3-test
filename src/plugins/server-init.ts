@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, useNuxtApp, useRequestHeaders } from '#app'
+import { useNuxtApp, useRequestHeaders } from '#app'
 
 export default defineNuxtPlugin(() => {
   // console.log('process', process)
