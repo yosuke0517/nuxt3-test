@@ -19,10 +19,15 @@ import { useAsyncData } from '#imports'
 import { NuxtApp, useRequestHeaders } from '#app'
 import { userPresenter } from '~/plugins/userInjection'
 import ChildComponent from '~/components/ChildComponent.vue'
+import { getKuroshiro } from '~/helper/string'
 
 export default defineComponent({
   components: { ChildComponent },
   setup(props, context) {
+    onMounted(async () => {
+      const result = await getKuroshiro()
+      console.log('kuroshiro', result)
+    })
     const app: NuxtApp = useNuxtApp()
     console.log('test2 in process', process.env.HOGE)
     useAsyncData('key', async () => {
