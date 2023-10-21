@@ -53,7 +53,13 @@ export default defineNuxtConfig({
           },
         ],
       }
+
       pages.push(invoicesRoute)
+      pages.push({
+        name: 'error',
+        path: '/:pathMatch(.*)*', // すべてのパスに一致するルート
+        file: '~/pages/error.vue', // ~/pages/error.vue へのリダイレクト
+      })
     },
   },
   css: ['~/assets/variables.scss'],
