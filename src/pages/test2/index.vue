@@ -13,22 +13,41 @@
 </template>
 
 <script lang="ts">
-import { useNuxtApp } from 'nuxt/app'
-import { defineComponent, onMounted, reactive } from 'vue'
-import { useAsyncData } from '#imports'
-import { NuxtApp, useRequestHeaders } from '#app'
+import { defineComponent, onMounted, ref } from 'vue'
+import {
+  NuxtApp,
+  useRequestHeaders,
+  useAsyncData,
+  useNuxtApp,
+  useRuntimeConfig,
+} from '#app'
 import { userPresenter } from '~/plugins/userInjection'
 import ChildComponent from '~/components/ChildComponent.vue'
 import { getKuroshiro } from '~/helper/string'
+import { useFetch } from '#imports'
 
+const hoge = ref()
+// useFetch(async () => {
+//   console.log('env', useRuntimeConfig().public.HOGE)
+//   console.log('api/hello in useFetch public: ', process.env.HOGE)
+//   console.log('api/hello in useFetch private: ', process.env.NUXT_ENV_FUGA)
+//   const res = await fetch('http://localhost:3000/api/hello')
+//   hoge.value = await res.json()
+// })
 export default defineComponent({
   components: { ChildComponent },
   setup(props, context) {
+    useAsyncData(async () => {
+      console.log('env', useRuntimeConfig().public.HOGE)
+      console.log('api/hello in useFetch public: ', process.env.HOGE)
+      console.log('api/hello in useFetch private: ', process.env.NUXT_ENV_FUGA)
+      const res = await fetch('http://localhost:3000/api/hello')
+      hoge.value = await res.json()
+    })
     onMounted(async () => {
       const result = await getKuroshiro()
       console.log('kuroshiro', result)
     })
-    const app: NuxtApp = useNuxtApp()
     console.log('test2 in process', process.env.HOGE)
     useAsyncData('key', async () => {
       if (process.server) {
